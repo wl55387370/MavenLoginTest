@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<configuration status="OFF">    
+  <appenders>    
+    <Console name="Console" target="SYSTEM_OUT">    
+      <PatternLayout pattern="%d{HH:mm:ss}  [%-5level] : %msg%n"/>    
+    </Console>  
+    <!-- 日志输出到日志文件 -->  
+     <File name="log" fileName="logs/test.log" append="true">
+            <ThresholdFilter level="trace"/>
+            <PatternLayout pattern="%d{HH:mm:ss}  [%-5level] : %msg%n"/>    
+     </File>  
+  </appenders>    
+  <loggers>    
+    <root level="debug">    
+      <appender-ref ref="Console"/> 
+      <appender-ref ref="log"></appender-ref>
+    </root>    
+  </loggers>    
+</configuration>  
